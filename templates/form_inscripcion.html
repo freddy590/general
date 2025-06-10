@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h2>nueva inscripcion</h2>
+    </div>
+    <div class="card-body">
+        <form action="" method="post">
+            <div class="bm-3">
+                <label for="" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="fecha" required>
+            </div>
+            <div class="mb-3">
+                <label class="label-form">Estudiante</label>
+                <select name="estudiante_id"  class="form-select" required>
+                    <option value="">--- Seleccione un estudiante ---</option>
+                    {% for item in estudiantes %}
+                    <option value="{{ item.id }}">{{ item.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Curso</label>
+                <select name="curso_id"  class="form-select" required>
+                    <option value="">--- Seleccione un curso ---
+                        {% for item in cursos %}
+                        <option value="{{ item.id}}">{{ item.descripcion }}</option>
+                        {% endfor %}
+                    </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

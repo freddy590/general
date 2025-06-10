@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Bienvenido a la App</h1>
+<a href="{{ url_for('register') }}" class="btn btn-primary me-2">Registrarse</a>
+<a href="{{ url_for('login') }}" class="btn btn-success">Iniciar Sesión</a>
+{% endblock %}

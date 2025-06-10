@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h2>
+            {% if estudiante %}Editar{% else %}Nuevo{% endif %} estudiante
+        </h2>
+    </div>
+    <div class="card-body">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" 
+                       value="{{ estudiante.nombre if estudiante else '' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" name="apellidos" id="apellidos"
+                       value="{{ estudiante.apellidos if estudiante else '' }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"
+                       value="{{ estudiante.fecha_nacimiento if estudiante else '' }}" required>
+            </div>
+            
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a href="{{ url_for('estudiantes') }}" class="btn btn-secondary">Cancelar</a>
+            
+
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

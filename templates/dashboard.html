@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Panel de Usuario{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Bienvenido, {{ name }}</h2>
+    <div class="card">
+        <div class="card-body">
+            <p><strong>Nombre de usuario:</strong> {{ username }}</p>
+            <p><strong>Correo electrónico:</strong> {{ current_user.email }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h2>
+            {% if curso %}Editar{% else %}Nuevo{% endif %} curso
+        </h2>
+    </div>
+    <div class="card_cody">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" name="descripcion" 
+                value="{{ curso.descripcion if curso else '' }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Horas</label>
+                <input type="number" class="form-control" name="horas" 
+                value="{{ curso.horas if curso else '' }}" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
